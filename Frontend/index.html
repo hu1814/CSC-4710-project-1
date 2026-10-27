@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSC-4710 | User Management</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <header><div class="shell"><p class="eyebrow">CSC-4710 · PROJECT 1</p><h1>User Management Portal</h1><p>Register, sign in, and search user records.</p></div></header>
+  <main class="shell">
+    <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+    <div class="columns">
+      <section class="card"><h2>Create account</h2>
+        <form id="registerForm">
+          <label>Username <input name="username" maxlength="50" required autocomplete="username"></label>
+          <label>Password <input name="password" type="password" minlength="8" required autocomplete="new-password"></label>
+          <label>First name <input name="firstname" maxlength="50" required></label>
+          <label>Last name <input name="lastname" maxlength="50" required></label>
+          <div class="row"><label>Salary <input name="salary" type="number" min="0" step="0.01" required></label><label>Age <input name="age" type="number" min="0" max="130" step="1" required></label></div>
+          <button type="submit">Register</button>
+        </form>
+      </section>
+      <section class="card"><h2>Sign in</h2>
+        <form id="signinForm">
+          <label>Username <input name="username" required autocomplete="username"></label>
+          <label>Password <input name="password" type="password" required autocomplete="current-password"></label>
+          <button type="submit">Sign in</button>
+        </form>
+        <p class="hint">This frontend sends credentials to the backend. Authentication must be verified server-side.</p>
+      </section>
+    </div>
+    <section class="card"><h2>Search users</h2><p class="hint">Select a search type and enter the corresponding criteria.</p>
+      <form id="searchForm">
+        <label>Search type
+          <select id="searchType" name="type">
+            <option value="name">First / last name</option>
+            <option value="userid">User ID (username)</option>
+            <option value="salary">Salary range</option>
+            <option value="age">Age range</option>
+            <option value="after">Registered after user ID</option>
+            <option value="never">Never signed in</option>
+            <option value="same-day">Same registration day as user ID</option>
+            <option value="today">Registered today</option>
+          </select>
+        </label>
+        <div id="searchFields" class="row"></div>
+        <button type="submit">Search</button>
+      </form>
+      <div class="results-heading"><h3>Results</h3><span id="resultCount"></span></div>
+      <div class="table-scroll"><table><thead><tr><th>Username</th><th>First name</th><th>Last name</th><th>Salary</th><th>Age</th><th>Registered</th><th>Last sign-in</th></tr></thead><tbody id="results"><tr><td colspan="7">Run a search to view results.</td></tr></tbody></table></div>
+    </section>
+  </main>
+  <footer>CSC-4710 · Database Web Application</footer>
+</body>
+</html>
