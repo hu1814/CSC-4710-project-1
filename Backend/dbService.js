@@ -1,13 +1,9 @@
-// database services, accessbile by DbService methods.
-
 const mysql = require('mysql');
 const dotenv = require('dotenv');
 dotenv.config(); // read from .env file
 
 let instance = null; 
 
-
-// if you use .env to configure
 console.log("HOST: " + process.env.HOST);
 console.log("DB USER: " + process.env.DB_USER);
 console.log("PASSWORD: " + process.env.PASSWORD);
@@ -33,7 +29,6 @@ const connection = mysql.createConnection({
      port:3306
 });
 */
-
 
 connection.connect((err) => {
      if(err){
