@@ -1,4 +1,4 @@
-# CSC-4710 Project 1 – User Registration and Database Management
+# CSC-4710 Project 1 - User Registration and Database Management
 
 ## Project Overview
 
@@ -232,6 +232,6 @@ The demonstration will cover user registration, authentication, database searche
 
 **Course:** CSC-4710
 
-**Project:** Project 1 – User Registration and Database Management
+**Project:** Project 1 - User Registration and Database Management
 
 **Repository:** [hu1814/CSC-4710-project-1](https://github.com/hu1814/CSC-4710-project-1)
